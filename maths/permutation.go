@@ -1,10 +1,10 @@
 package maths
 
-func Factorial(n int) int {
+func FactorialFunction(n int) int {
 	if n == 0 {
 		return 1
 	}
-	return n * Factorial(n-1)
+	return n * FactorialFunction(n-1)
 }
 
 func Permutation(s string) int {
@@ -14,10 +14,10 @@ func Permutation(s string) int {
 		Countchar[char]++
 	}
 
-	numerator := Factorial(n)
+	numerator := FactorialFunction(n)
 	denominator := 1
 	for _, count := range Countchar {
-		denominator *= Factorial(count)
+		denominator *= FactorialFunction(count)
 	}
 
 	return numerator / denominator
